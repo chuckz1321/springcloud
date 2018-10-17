@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false #these two false values indicate this application is a eureka-server.
+    fetch-registry: false
+    service-url:
+      defalutZone: http://${eureka.instance.hostname}:${server.port}/euraka/
+
+spring:
+  application:
+    name: server
+
+#  profiles:
+#    active:
