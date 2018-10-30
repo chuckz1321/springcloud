@@ -1,22 +1,28 @@
-package com.chuck.client2;
+package com.chuck.zuulservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
+@EnableZuulProxy
 @EnableEurekaClient
+@EnableDiscoveryClient
 @RestController
-public class Client2Application {
+public class ZuulserviceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Client2Application.class, args);
+        SpringApplication.run(ZuulserviceApplication.class, args);
     }
+
+
 
     @RequestMapping("/")
     public String welcome(){
-        return "client2";
+        return "zuul";
     }
 }

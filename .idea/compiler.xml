@@ -11,6 +11,7 @@
         <module name="feign-client" />
         <module name="server" />
         <module name="springcloud" />
+        <module name="zuulservice" />
       </profile>
     </annotationProcessing>
   </component>
